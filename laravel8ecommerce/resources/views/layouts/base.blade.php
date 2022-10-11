@@ -48,7 +48,9 @@
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.categories')}}">Categories</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#portfolio">About Us</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
+                                @elseif(Auth::user()->utype === 'OWN')
+                                    <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @else
                                     //
