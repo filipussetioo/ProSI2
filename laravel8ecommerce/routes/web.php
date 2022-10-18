@@ -8,6 +8,7 @@ use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Form;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::get('/shop', ShopComponent:: class);
 Route::get('/cart', CartComponent:: class);
 
 Route::get('/checkout', CheckoutComponent:: class);
+
+Route::get('/forms', App\Http\Livewire\Forms:: class)->name('forms');
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
@@ -50,4 +53,6 @@ Route::middleware(['auth:sanctum','verified'])->group(function(){
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
+    Route::get('/admin/promo',App\Http\Livewire\Admin\PromoComponent::class)->name('admin.promo');
+    Route::get('/admin/tambahpromo',App\Http\Livewire\Admin\TambahPromoComponent::class)->name('admin.tambahpromo');
 });
