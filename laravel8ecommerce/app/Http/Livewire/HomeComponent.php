@@ -2,12 +2,16 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Paket;
+use Livewire\WithPagination;
 use Livewire\Component;
 
 class HomeComponent extends Component
 {
+	use WithPagination;
     public function render()
     {
-        return view('livewire.home-component')->layout('layouts.base');
+    	$pakets = Paket::paginate(5);
+        return view('livewire.home-component',['pakets'=>$pakets])->layout('layouts.base');
     }
 }

@@ -15,6 +15,7 @@
                         <h3 class="section-subheading text-muted">Merupakan paket makanan berlangganan yang dapat berlangganan secara harian atau mingguan atau bulanan.</h3>
                     </div>
                     <div class="row">
+                        @foreach($pakets as $paket)
                         <div class="col-lg-4 col-sm-6 mb-4">
                             <!-- Portfolio item 1-->
                             <div class="portfolio-item">
@@ -22,89 +23,15 @@
                                     <div class="portfolio-hover">
                                         <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                     </div>
-                                    <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                                    <img class="img-fluid" src="{{asset('assets/img/portfolio')}}/{{$paket->gambar_paket}}" alt="{{$paket->nama_paket}}" />
                                 </a>
                                 <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Catering Premium</div>
-                                    <div class="portfolio-caption-subheading text-muted">merupakan catering yang dapat dipesan mingguan</div>
+                                    <div class="portfolio-caption-heading">{{$paket->nama_paket}}</div>
+                                    <div class="portfolio-caption-subheading text-muted">{{$paket->deskripsi}}</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 2-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Catering Reguler</div>
-                                    <div class="portfolio-caption-subheading text-muted">merupakan catering yang dapat dipesan</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 3-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Catering diet</div>
-                                    <div class="portfolio-caption-subheading text-muted">merupakan catering yang dapat dipesan</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                            <!-- Portfolio item 4-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Paket 4</div>
-                                    <div class="portfolio-caption-subheading text-muted">merupakan catering yang dapat dipesan</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                            <!-- Portfolio item 5-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Paket 5</div>
-                                    <div class="portfolio-caption-subheading text-muted">merupakan catering yang dapat dipesan</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <!-- Portfolio item 6-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                    </div>
-                                    <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Paket 6</div>
-                                    <div class="portfolio-caption-subheading text-muted">merupakan catering yang dapat dipesan</div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
