@@ -47,14 +47,15 @@
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.categories')}}">Tambah kurir</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @elseif(Auth::user()->utype === 'OWN')
-                                    <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard')}}">Tambah Paket</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard')}}">Tambah Jadwal</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard')}}">Tambah Menu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('owner.promo')}}">Tambah Promo</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('owner.categories')}}">Tambah Kurir</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('owner.product')}}">Tambah Menu</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @else
                                     //
-                                    <li class="nav-item"><a class="nav-link" href=""{{route('user.dashboard')}}"">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('user.dashboard')}}">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#portfolio">About Us</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @endif

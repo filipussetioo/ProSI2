@@ -7,8 +7,10 @@ use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Owner\OwnerCategoryComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Form;
+use App\Http\Livewire\Owner\OwnerDashboardComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ use App\Http\Livewire\Form;
 
 Route::get('/', HomeComponent:: class);
 
-Route::get('/shop', ShopComponent:: class);
+
 
 Route::get('/cart', CartComponent:: class);
 
@@ -47,6 +49,7 @@ Route::get('/forms', App\Http\Livewire\Forms:: class)->name('forms');
 //buat user
 Route::middleware(['auth:sanctum','verified'])->group(function(){
     route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/shop', ShopComponent:: class);
 });
 
 //buat admin
@@ -55,4 +58,14 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
     Route::get('/admin/promo',App\Http\Livewire\Admin\PromoComponent::class)->name('admin.promo');
     Route::get('/admin/tambahpromo',App\Http\Livewire\Admin\TambahPromoComponent::class)->name('admin.tambahpromo');
+});
+
+//owner
+Route::middleware(['auth:sanctum','verified','authowner'])->group(function(){
+    Route::get('/owner/dashboard',OwnerDashboardComponent::class)->name('owner.dashboard');
+    Route::get('/owner/categories',OwnerCategoryComponent::class)->name('owner.categories');
+    Route::get('/owner/promo',App\Http\Livewire\Owner\OwnerPromoComponent::class)->name('owner.promo');
+    Route::get('/owner/tambahpromo',App\Http\Livewire\Owner\OwnerTambahPromoComponent::class)->name('owner.tambahpromo');
+    Route::get('/owner/product',App\Http\Livewire\Owner\OwnerProductComponent::class)->name('owner.product');
+    Route::get('/owner/tambahproduct',App\Http\Livewire\Owner\OwnerTambahProductComponent::class)->name('owner.tambahproduct');
 });
