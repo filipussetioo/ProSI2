@@ -23,7 +23,7 @@
                                     <div class="portfolio-hover">
                                         <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                     </div>
-                                    <img class="img-fluid" src="{{asset('assets/img/portfolio')}}/{{$paket->gambar_paket}}" alt="{{$paket->nama_paket}}" />
+                                    <img class="img-fluid" src="{{asset('assets/img/pakets')}}/{{$paket->gambar_paket}}" alt="{{$paket->nama_paket}}" />
                                 </a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-heading">{{$paket->nama_paket}}</div>
@@ -49,9 +49,9 @@
                                         <!-- Project details-->
                                         <h2 class="text-uppercase">Project Name</h2>
                                         <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                        @foreach($products as $product)
+                                        {{-- @foreach($products as $product)
                                             {{$product->name}}
-                                        @endforeach
+                                        @endforeach --}}
                                         {{-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
                                         <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                         <ul class="list-inline">

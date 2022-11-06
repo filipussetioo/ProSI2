@@ -24,8 +24,8 @@
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-
-    </head>
+@livewireStyles
+</head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
@@ -45,6 +45,7 @@
                                     //Admin
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.promo')}}">Tambah Promo</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.categories')}}">Tambah kurir</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('admin.paket')}}">Tambah paket</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @elseif(Auth::user()->utype === 'OWN')
                                     <li class="nav-item"><a class="nav-link" href="{{route('owner.promo')}}">Tambah Promo</a></li>
@@ -88,6 +89,7 @@
             @csrf
         </form>
         {{$slot}}
+        @livewireScripts
     </body>
     <!-- <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">

@@ -22,7 +22,7 @@
                     	@if(Session::has('message'))
                     		<div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                     	@endif
-                        <form class="form-horizontal" wire:submit.prevent="storePromo">
+                        <form class="form-horizontal" wire:submit.prevent="submit">
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Nama Promo</label>
                         		<div class="col-md-4">
@@ -62,9 +62,9 @@
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Tipe Pelanggan</label>
                         		<div class="col-md-4">
-                        		<input type="radio" id="1" name="tipe_pelanggan" value="1" wire:model="tipe_pelanggan">
+                        		<input type="radio" id="1" name="tipe_pelanggan" value="1" wire:model="id_tipe_pelanggan">
   								<label for="bronze">Bronze</label><br>
-								<input type="radio" id="2" name="tipe_pelanggan" value="2" wire:model="tipe_pelanggan">
+								<input type="radio" id="2" name="tipe_pelanggan" value="2" wire:model="id_tipe_pelanggan">
 								<label for="gold"> Gold</label><br>
                         		</div>
                         	</div>
