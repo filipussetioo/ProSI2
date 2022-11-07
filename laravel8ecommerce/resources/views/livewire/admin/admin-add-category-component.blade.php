@@ -1,4 +1,4 @@
-<main id="main">
+
 <div>
     <style>
         nav svg{
@@ -58,4 +58,3 @@
         </div>
     </div>
 </div>
-</main>

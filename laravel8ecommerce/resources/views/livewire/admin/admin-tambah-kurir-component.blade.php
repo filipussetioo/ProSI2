@@ -15,6 +15,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                    	<a>TAMBAH KURIR</a><br>
             					<a class="btn btn-primary btn-m text-uppercase" href="{{route('admin.kurir')}}">BACK</a>
             					
                     </div>

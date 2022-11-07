@@ -28,6 +28,7 @@
                                     <th>Tanggal Mulai</th>
                                     <th>Tanggal Selesai</th>
                                     <th>Tipe Pelanggan</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,7 +40,10 @@
                                         <td>{{$promoz->kode_promo}}</td>
                                         <td>{{$promoz->tanggal_mulai}}</td>
                                         <td>{{$promoz->tanggal_selesai}}</td>
-                                        <td>{{$promoz->id_tipe_pelanggan}}</td>
+                                        <td>{{$promoz->tp_id}}</td>
+                                        <td>
+                                            <a href="{{route('admin.editpromo')}}"><i class="fa fa-edit fa-2x text-info">
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
