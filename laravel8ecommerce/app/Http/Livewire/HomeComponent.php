@@ -14,10 +14,7 @@ class HomeComponent extends Component
     {
         $products = Product::paginate(10);
         $pakets = Paket::paginate(5);
-        /**
-        return view('livewire.home-component',['pakets'=>$pakets])->layout('layouts.base');
-        $products = Product::orderBy('created_at','DESC')->get()->take(8);
-       **/
+
         return view('livewire.home-component',['products'=>$products])->layout('layouts.base');
         $products = Product::orderBy('created_at','DESC')->get()->take(8);
     }

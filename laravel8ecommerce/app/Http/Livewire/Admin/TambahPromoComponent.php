@@ -20,8 +20,6 @@ class TambahPromoComponent extends Component
 	// 	$this->nama_promo = Str::nama_promo($this->name);
 	// }
 
-
-
 	public function storePromo(){
 		$promo = new Promo();
 		$promo->nama_promo = $this->nama_promo;
