@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Promo;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class TambahPromoComponent extends Component
 {
@@ -13,7 +14,7 @@ class TambahPromoComponent extends Component
 	public $kode_promo;
 	public $tanggal_mulai;
 	public $tanggal_selesai;
-	public $id_tipe_pelanggan;
+	public $tp_id;
 
 	// public function generatenamapromo(){
 	// 	$this->nama_promo = Str::nama_promo($this->name);
@@ -29,7 +30,7 @@ class TambahPromoComponent extends Component
 		$promo->kode_promo = $this->kode_promo;
 		$promo->tanggal_mulai = $this->tanggal_mulai;
 		$promo->tanggal_selesai = $this->tanggal_selesai;
-		$promo->id_tipe_pelanggan = $this->id_tipe_pelanggan;
+		$promo->tp_id = $this->tp_id;
 		$promo->save();
 		session()->flash('message','Promo telah ditambahkan!');
 	}

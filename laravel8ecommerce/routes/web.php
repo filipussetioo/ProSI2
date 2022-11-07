@@ -1,12 +1,17 @@
 <?php
 
 use App\Http\Livewire\Admin\AdminCategoryComponent;
+use App\Http\Livewire\Admin\AdminKurirComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\TambahPromoComponent;
+use App\Http\Livewire\Admin\AdminTambahKurirComponent;
+use App\Http\Livewire\Admin\PromoComponent;
+use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Owner\OwnerCategoryComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Form;
@@ -56,8 +61,11 @@ Route::middleware(['auth:sanctum','verified'])->group(function(){
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
+    Route::get('/admin/categories/add',AdminAddCategoryComponent::class)->name('admin.addcategory');
     Route::get('/admin/promo',App\Http\Livewire\Admin\PromoComponent::class)->name('admin.promo');
     Route::get('/admin/tambahpromo',App\Http\Livewire\Admin\TambahPromoComponent::class)->name('admin.tambahpromo');
+    Route::get('/admin/kurir',AdminKurirComponent::class)->name('admin.kurir');
+    Route::get('/admin/kurir/tambah',AdminTambahKurirComponent::class)->name('admin.tambahkurir');
 });
 
 //owner

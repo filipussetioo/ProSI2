@@ -32,7 +32,7 @@
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Potongan Promo</label>
                         		<div class="col-md-4">
-                        			<input type="number" placeholder="Potongan Promo" class="form-control input-md" wire:model="potongan_promo"/>
+                        			<input type="number" step=".01"placeholder="Potongan Promo" class="form-control input-md" wire:model="potongan_promo"/>
                         		</div>
                         	</div>
                         	<div class="form-group">
@@ -62,9 +62,9 @@
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Tipe Pelanggan</label>
                         		<div class="col-md-4">
-                        		<input type="radio" id="1" name="tipe_pelanggan" value="1" wire:model="tipe_pelanggan">
+                        		<input type="radio" id="1" name="tipe_pelanggan" value="1" wire:model="tp_id">
   								<label for="bronze">Bronze</label><br>
-								<input type="radio" id="2" name="tipe_pelanggan" value="2" wire:model="tipe_pelanggan">
+								<input type="radio" id="2" name="tipe_pelanggan" value="2" wire:model="tp_id">
 								<label for="gold"> Gold</label><br>
                         		</div>
                         	</div>
