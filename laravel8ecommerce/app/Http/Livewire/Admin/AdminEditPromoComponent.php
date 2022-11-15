@@ -4,9 +4,8 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Promo;
 use Livewire\Component;
-use Illuminate\Support\Str;
 
-class TambahPromoComponent extends Component
+class AdminEditPromoComponent extends Component
 {
 	public $nama_promo;
 	public $potongan_promo;
@@ -16,12 +15,21 @@ class TambahPromoComponent extends Component
 	public $tanggal_selesai;
 	public $tp_id;
 
-	// public function generatenamapromo(){
-	// 	$this->nama_promo = Str::nama_promo($this->name);
+	// public function mount($promo_slug){
+	// 	$promo = Promo::where('nama_promo',$promo_slug)->first();
+	// 	$this->nama_promo = $promo->nama_promo;
+	// 	$this->potongan_promo = $promo->potongan_promo;
+	// 	$this->deskripsi_promo = $promo->deskripsi_promo;
+	// 	$this->kode_promo = $promo->kode_promo;
+	// 	$this->tanggal_mulai = $promo->tanggal_mulai;
+	// 	$this->tanggal_selesai = $promo->tanggal_selesai;
+	// 	$this->tp_id = $promo->tp_id;
 	// }
 
-	public function storePromo(){
-		$promo = new Promo();
+
+
+	public function updatePromo(){
+		$promo = Promo::find($this->id);
 		$promo->nama_promo = $this->nama_promo;
 		$promo->potongan_promo = $this->potongan_promo;
 		$promo->deskripsi_promo = $this->deskripsi_promo;
@@ -35,6 +43,6 @@ class TambahPromoComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.tambah-promo-component')->layout('layouts.base');
+        return view('livewire.admin.admin-edit-promo-component')->layout('layouts.base');
     }
 }

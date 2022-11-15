@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a>TAMBAH PROMO</a><br>
+                    			<a>EDIT PROMO</a><br>
             					<a class="btn btn-primary btn-m text-uppercase" href="{{route('admin.promo')}}">BACK</a>
             					
                     </div>
@@ -23,7 +23,7 @@
                     	@if(Session::has('message'))
                     		<div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                     	@endif
-                        <form class="form-horizontal" wire:submit.prevent="storePromo">
+                        <form class="form-horizontal" wire:submit.prevent="updatePromo">
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Nama Promo</label>
                         		<div class="col-md-4">
