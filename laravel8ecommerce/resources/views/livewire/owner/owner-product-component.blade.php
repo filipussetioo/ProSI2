@@ -1,43 +1,44 @@
-<style>
-    .product{
-        margin-top: 25px;
-    }
-</style>
 <div>
-    <div class="container product" style="padding:30px 0;">
+    <style>
+        nav svg{
+            height: 20px;
+        }
+        nav .hidden{
+            display: block !important;
+        }
+        .container .row{
+            padding-top: 5%; 
+        }
+    </style>
+    <div class="container" style="padding:30px 0;">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        All Product
+                        <a class="btn btn-primary btn-m text-uppercase" href="{{route('owner.tambahproduct')}}">Tambah Paket</a>
                     </div>
                     <div class="panel-body">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Stock</th>
-                                    <th>Price</th>
-                                    <th>Category</th>
-                                    <th>Date</th>
-                                    <th>Action</th>
+                                    <th>Nama Paket</th>
+                                    <th>Harga Paket</th>
+                                    <th>Deskripsi Paket</th>
+                                    <th>Tanggal Dibentuk</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
+                                @foreach ($paket as $pakets)
                                     <tr>
-                                        <td>{{$product->id}}</td>
-                                        <td>{{$product->images}}</td>
-                                        <td>{{$product->name}}</td>
-                                        <td>{{$product->stock_status}}</td>
-                                        <td>{{$product->regular_price}}</td>
-                                        <td>{{$product->category}}</td>
+                                        <td>{{$pakets->nama_paket}}</td>
+                                        <td>{{$pakets->harga}}</td>
+                                        <td>{{$pakets->deskripsi}}</td>
+                                        <td>{{$pakets->created_at}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        {{$paket->links()}}
                     </div>
                 </div>
             </div>

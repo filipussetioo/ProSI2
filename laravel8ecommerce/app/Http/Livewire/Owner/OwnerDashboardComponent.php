@@ -3,11 +3,13 @@
 namespace App\Http\Livewire\Owner;
 
 use Livewire\Component;
+use App\Models\User;
 
 class OwnerDashboardComponent extends Component
 {
     public function render()
     {
-        return view('livewire.owner.owner-dashboard-component')->layout('layouts.base');
+        $users = User::paginate(10);
+        return view('livewire.owner.owner-dashboard-component',['users'=>$users])->layout('layouts.base');
     }
 }

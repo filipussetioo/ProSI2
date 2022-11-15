@@ -8,6 +8,6 @@ class OwnerTambahProductComponent extends Component
 {
     public function render()
     {
-        return view('livewire.owner.owner-tambah-product-component');
+        return view('livewire.owner.owner-tambah-product-component')->layout('layouts.base');
     }
 }
