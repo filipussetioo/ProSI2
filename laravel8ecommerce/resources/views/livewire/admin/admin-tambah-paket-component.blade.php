@@ -15,13 +15,13 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-            			<a class="btn btn-primary btn-m text-uppercase" href="{{route('owner.product')}}">BACK</a>
+            			<a class="btn btn-primary btn-m text-uppercase" href="{{route('admin.promo')}}">BACK</a>
                     </div>
                     <div class="panel-body">
                     	@if(Session::has('message'))
                     		<div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                     	@endif
-                        <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="submit" method="POST">
+                        <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="addPaket" method="POST">
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Nama Paket</label>
                         		<div class="col-md-4">

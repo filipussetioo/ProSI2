@@ -79,5 +79,5 @@ Route::middleware(['auth:sanctum','verified','authowner'])->group(function(){
     Route::get('/owner/promo',App\Http\Livewire\Owner\OwnerPromoComponent::class)->name('owner.promo');
     Route::get('/owner/tambahpromo',App\Http\Livewire\Owner\OwnerTambahPromoComponent::class)->name('owner.tambahpromo');
     Route::get('/owner/product',App\Http\Livewire\Owner\OwnerProductComponent::class)->name('owner.product');
-    Route::get('/owner/tambahproduct',App\Http\Livewire\Owner\OwnerTambahProductComponent::class)->name('owner.tambahproduct');
+    Route::get('/owner/product/tambah',App\Http\Livewire\Owner\OwnerTambahProductComponent::class)->name('owner.tambahproduct');
 });

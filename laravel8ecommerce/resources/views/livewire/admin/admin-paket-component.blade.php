@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a class="btn btn-primary btn-m text-uppercase" href="{{route('owner.tambahproduct')}}">Tambah Paket</a>
+                        <a class="btn btn-primary btn-m text-uppercase" href="{{route('admin.tambahpaket')}}">Tambah Paket</a>
                     </div>
                     <div class="panel-body">
                         <table class="table table-striped">
