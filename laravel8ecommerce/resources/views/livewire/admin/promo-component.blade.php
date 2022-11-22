@@ -40,10 +40,9 @@
                                         <td>{{$promoz->kode_promo}}</td>
                                         <td>{{$promoz->tanggal_mulai}}</td>
                                         <td>{{$promoz->tanggal_selesai}}</td>
-                                        <!-- untuk memberikan foreign key ... RUMUS KERAMAT SAKTI -->
-                                        <td>{{ \Illuminate\Support\Facades\DB::table('tipe_pelanggans')->where('id',$promoz->tp_id)->value('tipe_pelanggan')}}</td>
+                                        <td>{{$promoz->tp_id}}</td>
                                         <td>
-                                            <a href="{{route('admin.editpromo',['promo_kode'=>$promoz->kode_promo])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                            <a href="{{route('admin.editpromo')}}"><i class="fa fa-edit fa-2x text-info">
                                         </td>
                                     </tr>
                                 @endforeach

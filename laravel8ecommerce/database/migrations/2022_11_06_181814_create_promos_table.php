@@ -23,8 +23,7 @@ class CreatePromosTable extends Migration
             $table->date('tanggal_selesai');
             $table->bigInteger('tp_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('tp_id')->references('id')->on('tipe_pelanggans');
-            // ->onDelete('cascade');
+            $table->foreign('tp_id')->references('id')->on('tipe_pelanggans')->onDelete('cascade');
         });
     }
 
