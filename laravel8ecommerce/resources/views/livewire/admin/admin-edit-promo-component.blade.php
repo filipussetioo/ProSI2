@@ -23,7 +23,7 @@
                     	@if(Session::has('message'))
                     		<div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                     	@endif
-                        <form class="form-horizontal" wire:submit.prevent="updatePromo">
+                        <form class="form-horizontal" wire:submit.prevent="update">
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Nama Promo</label>
                         		<div class="col-md-4">
@@ -42,12 +42,12 @@
                         			<input type="text" placeholder="Deskripsi Promo" class="form-control input-md" wire:model="deskripsi_promo"/>
                         		</div>
                         	</div>
-                        	<div class="form-group">
+                        	<!-- <div class="form-group">
                         		<label class="col-md-4 control-label">Kode Promo</label>
                         		<div class="col-md-4">
                         			<input type="text" placeholder="Kode Promo" class="form-control input-md" wire:model="kode_promo"/>
                         		</div>
-                        	</div>
+                        	</div> -->
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Tanggal Mulai</label>
                         		<div class="col-md-4">
@@ -61,13 +61,23 @@
                         		</div>
                         	</div>
                         	<div class="form-group">
-                        		<label class="col-md-4 control-label">Tipe Pelanggan</label>
+                                <label class="col-md-4 control-label">Tipe Pelanggan </label>
+                                <div class="col-md-4">
+                                    <!-- <select> -->
+                                    @foreach($tipe_pelanggans as $tipepelanggan)
+                                        <input type="radio" id="{{$tipepelanggan->id}}" name="tipe_pelanggan" value="{{$tipepelanggan->id}}" wire:model="tp_id">
+                                        <label>{{$tipepelanggan->tipe_pelanggan}}</label><br>
+                                       <!--  <option value="{{$tipepelanggan->id}}" wire:model="tp_id">{{$tipepelanggan->tipe_pelanggan}}</option> -->
+                                    @endforeach
+                                    <!-- </select> -->
+                                </div>
+                        	<!-- 	<label class="col-md-4 control-label">Tipe Pelanggan</label>
                         		<div class="col-md-4">
                         		<input type="radio" id="1" name="tipe_pelanggan" value="1" wire:model="tp_id">
   								<label for="bronze">Bronze</label><br>
 								<input type="radio" id="2" name="tipe_pelanggan" value="2" wire:model="tp_id">
 								<label for="gold"> Gold</label><br>
-                        		</div>
+                        		</div> -->
                         	</div>
                         	<div class="form-group">
                         		<label class="col-md-4 control-label"></label>

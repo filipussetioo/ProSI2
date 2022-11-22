@@ -27,6 +27,7 @@
                                     <th>alamat_tambahan</th>
                                     <th>nomor_handphone</th>
                                     <th>email</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,6 +39,9 @@
 										<td>{{$kurirs->alamat_tambahan}}</td>
 										<td>{{$kurirs->nomor_handphone}}</td>
 										<td>{{$kurirs->email}}</td>
+                                        <td>
+                                            <a href="{{route('admin.editkurir',['kurir_id'=>$kurirs->id])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

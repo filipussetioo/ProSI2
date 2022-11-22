@@ -13,6 +13,7 @@ use App\Http\Livewire\Admin\AdminTambahKurirComponent;
 use App\Http\Livewire\Admin\PromoComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditPromoComponent;
+use App\Http\Livewire\Admin\AdminEditKurirComponent;
 use App\Http\Livewire\Owner\OwnerCategoryComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Form;
@@ -67,7 +68,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/admin/tambahpromo',App\Http\Livewire\Admin\TambahPromoComponent::class)->name('admin.tambahpromo');
     Route::get('/admin/kurir',AdminKurirComponent::class)->name('admin.kurir');
     Route::get('/admin/kurir/tambah',AdminTambahKurirComponent::class)->name('admin.tambahkurir');
-    Route::get('/admin/promo/edit',AdminEditPromoComponent::class)->name('admin.editpromo');
+    Route::get('/admin/promo/edit/{promo_kode}',AdminEditPromoComponent::class)->name('admin.editpromo');
+    Route::get('/admin/kurir/edit/{kurir_id}',AdminEditKurirComponent::class)->name('admin.editkurir');
 });
 
 //owner
