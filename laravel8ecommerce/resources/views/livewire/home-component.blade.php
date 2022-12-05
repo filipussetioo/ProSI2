@@ -16,7 +16,7 @@
                         <h3 class="section-subheading text-muted">Merupakan paket makanan berlangganan yang dapat berlangganan secara harian atau mingguan atau bulanan.</h3>
                     </div>
                     <div class="row">
-                        @foreach($pakets as $paket)
+                        @foreach($products as $product)
                         <div class="col-lg-4 col-sm-6 mb-4">
                             <!-- Portfolio item 1-->
                             <div class="portfolio-item">
@@ -24,11 +24,11 @@
                                     <div class="portfolio-hover">
                                         <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                     </div>
-                                    <img class="img-fluid" src="{{asset('../assets/images/pakets')}}/{{$paket->gambar_paket}}" alt="{{$paket->nama_paket}}" />
+                                    <img class="img-fluid" src="{{asset('assets/img/portfolio')}}/{{$product->image}}" alt="{{$product->name}}" />
                                 </a>
                                 <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">{{$paket->nama_paket}}</div>
-                                    <div class="portfolio-caption-subheading text-muted">{{$paket->deskripsi}}</div>
+                                    <div class="portfolio-caption-heading">{{$product->name}}</div>
+                                    <div class="portfolio-caption-subheading text-muted">{{$product->description}}</div>
                                 </div>
                             </div>
                         </div>
@@ -50,8 +50,8 @@
                                     <div class="modal-body">
                                         Project details
                                         
-                                        <h2 class="text-uppercase"></h2>
-                                        <p></p>
+                                        <h2 class="text-uppercase">{{$product->name}}</h2>
+                                        <p>{{$product->description}}</p>
                                          <ul class="list-inline">
                                             <li>
                                                 <strong>Client:</strong>

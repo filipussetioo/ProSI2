@@ -28,21 +28,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pakets as $paket)
+                                @foreach ($paket as $pakets)
                                     <tr>
-                                        <td>{{$paket->id}}</td>
-                                        <td>{{$paket->nama_paket}}</td>
-                                        <td>{{$paket->harga}}</td>
-                                        <td>{{$paket->deskripsi}}</td>
-                                        <td>{{$paket->created_at}}</td>
-                                        <td>
-                                            <a href="{{route('owner.editproduct',['paket_id'=>$paket->id])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
-                                        </td>
+                                        <td>{{$pakets->nama_paket}}</td>
+                                        <td>{{$pakets->harga}}</td>
+                                        <td>{{$pakets->deskripsi}}</td>
+                                        <td>{{$pakets->created_at}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{$pakets->links()}}
+                        {{$paket->links()}}
                     </div>
                 </div>
             </div>

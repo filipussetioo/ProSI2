@@ -28,9 +28,11 @@
                         			<input type="text" placeholder="Nama Paket" class="form-control input-md" wire:model="nama_paket" />
                         		</div>
                         	</div>
-							<div class="form-group" wire:ignore>
+                        	<div class="form-group">
                         		<label class="col-md-4 control-label">Deskripsi Paket</label>
-								<textarea wire:model="deskripsi" name="deskripsi" id="mytextarea" >Hello, World!</textarea>
+                        		<div class="col-md-4">
+                        			<input type="text" placeholder="Deskripsi Paket" class="form-control input-md" wire:model="deskripsi"/>
+                        		</div>
                         	</div>
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Harga Paket</label>
@@ -60,18 +62,3 @@
         </div>
     </div>
 </div>
-<script>
-
-	tinymce.init({
-		selector: '#mytextarea',
-		forced_root_block: false,
-		setup: function (editor) {
-			editor.on('init change', function () {
-				editor.save();
-			});
-			editor.on('change', function (e) {
-				@this.set('deskripsi', editor.getContent());
-			});
-		}
-	});
-</script>
