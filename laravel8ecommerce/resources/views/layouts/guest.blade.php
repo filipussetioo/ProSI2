@@ -55,6 +55,12 @@
                                     <li class="nav-item"><a class="nav-link" href="#portfolio">About Us</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
+                                @elseif(Auth::user()->utype === 'OWN')
+                                    //Owner
+                                    <li class="nav-item"><a class="nav-link" href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#portfolio">About Us</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @else
                                     //
                                     <li class="nav-item"><a class="nav-link" href=""{{route('user.dashboard')}}"">Home</a></li>

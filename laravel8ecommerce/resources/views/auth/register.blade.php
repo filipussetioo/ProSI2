@@ -30,23 +30,20 @@
 										<label for="frm-reg-email">Email Address*</label>
 										<input type="email" id="frm-reg-email" name="email" placeholder="Email address" :value="email">
 									</fieldset>
-									<fieldset class="wrap-functions ">
-										<label class="remember-field">
-											<input name="newletter" id="new-letter" value="forever" type="checkbox"><span>Sign Up for Newsletter</span>
-										</label>
-									</fieldset>
 									<fieldset class="wrap-title">
 										<h3 class="form-title">Login Information</h3>
 									</fieldset>
 									<fieldset class="wrap-input item-width-in-half left-item ">
 										<label for="frm-reg-pass">Password *</label>
-										<input type="text" id="frm-reg-pass" name="password" placeholder="Password">
+										<input type="password" id="frm-reg-pass" name="password" placeholder="Password">
 									</fieldset>
 									<fieldset class="wrap-input item-width-in-half ">
 										<label for="frm-reg-cfpass">Confirm Password *</label>
-										<input type="text" id="frm-reg-cfpass" name="password_confirmation" placeholder="Confirm Password" equired autocomplete="new-password">
+										<input type="password" id="frm-reg-cfpass" name="password_confirmation" placeholder="Confirm Password" equired autocomplete="new-password">
 									</fieldset>
-									<input type="submit" class="btn btn-sign" value="Register" name="register">
+                                    <a href="{{route('login')}}">
+									    <input type="submit" class="btn btn-sign" value="Register" name="register">
+                                    </a>
 								</form>
 							</div>											
 						</div>
