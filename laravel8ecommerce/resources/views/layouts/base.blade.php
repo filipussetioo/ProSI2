@@ -55,12 +55,13 @@
                                     //Admin
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.promo')}}">Tambah Promo</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.kurir')}}">Tambah kurir</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('owner.menu')}}">Tambah Menu</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @elseif(Auth::user()->utype === 'OWN')
                                     <li class="nav-item"><a class="nav-link" href="{{route('owner.dashboard')}}">Lihat Pengguna</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('owner.promo')}}">Tambah Promo</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('owner.categories')}}">Tambah Kurir</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('owner.product')}}">Tambah Menu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{route('owner.menu')}}">Tambah Menu</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @else
                                     //
