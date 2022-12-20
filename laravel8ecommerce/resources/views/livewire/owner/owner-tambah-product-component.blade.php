@@ -30,7 +30,7 @@
                         	</div>
                         	<div class="form-group" wire:ignore>
                         		<label class="col-md-4 control-label">Deskripsi Paket</label>
-								<textarea wire:model="deskripsi" name="deskripsi" id="mytextarea" >Hello, World!</textarea>
+								<textarea wire:model.defer="deskripsi" name="deskripsi" id="mytextarea" ></textarea>
                         	</div>
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Harga Paket</label>
@@ -60,18 +60,17 @@
         </div>
     </div>
 </div>
-<script>
 
-	tinymce.init({
-		selector: '#mytextarea',
-		forced_root_block: false,
-		setup: function (editor) {
-			editor.on('init change', function () {
-				editor.save();
-			});
-			editor.on('change', function (e) {
-				@this.set('deskripsi', editor.getContent());
-			});
-		}
-	});
+
+<script>
+	ClassicEditor
+		.create(document.querySelector('#mytextarea'))
+		.then(editor => {
+			editor.model.document.on('change:data', () => {
+				@this.set('deskripsi', editor.getData());
+			})
+		})
+		.catch(error => {
+			console.error(error);
+		});
 </script>

@@ -28,7 +28,7 @@
                                 </a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-heading">{{$paket->nama_paket}}</div>
-                                    <div class="portfolio-caption-subheading text-muted">{{$paket->deskripsi}}</div>
+                                    <div class="portfolio-caption-subheading">{!! $paket->deskripsi !!}</div>
                                 </div>
                             </div>
                         </div>

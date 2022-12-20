@@ -28,6 +28,11 @@ class OwnerTambahProductComponent extends Component
 
         $pakets->nama_paket = $this->nama_paket;
         $pakets->harga = $this->harga;
+        
+        // $this->validate([
+        //     'gambar_paket' => 'image', // 1MB Max
+        // ]);
+        // $this->gambar_paket->store('images');
         $imageName = Carbon::now()->timestamp. '.' .$this->gambar_paket->extension();
         $this->gambar_paket->storeAs('pakets',$imageName);
         $pakets->gambar_paket = $imageName;

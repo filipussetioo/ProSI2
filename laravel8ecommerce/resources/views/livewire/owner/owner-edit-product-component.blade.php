@@ -28,12 +28,10 @@
                         			<input type="text" placeholder="Nama Paket" class="form-control input-md" wire:model="nama_paket" />
                         		</div>
                         	</div>
-                        	<div class="form-group">
-                        		<label class="col-md-4 control-label">Deskripsi Paket</label>
-                        		<div class="col-md-4">
-                        			<textarea type="text" placeholder="Deskripsi Paket" class="form-control input-md" wire:model="deskripsi"></textarea>
-                        		</div>
-                        	</div>
+                        		<div class="form-group" wire:ignore>
+									<label class="col-md-4 control-label">Deskripsi Paket</label>
+									<textarea wire:model.defer="deskripsi" name="deskripsi" id="mytextarea" >{!! $deskripsi !!}</textarea>
+								</div>
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Harga Paket</label>
                         		<div class="col-md-4">
@@ -64,3 +62,16 @@
         </div>
     </div>
 </div>
+
+<script>
+	ClassicEditor
+		.create(document.querySelector('#mytextarea'))
+		.then(editor => {
+			editor.model.document.on('change:data', () => {
+				@this.set('deskripsi', editor.getData());
+			})
+		})
+		.catch(error => {
+			console.error(error);
+		});
+</script>

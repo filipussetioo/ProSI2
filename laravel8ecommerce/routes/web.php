@@ -40,7 +40,7 @@ Route::get('/', HomeComponent:: class);
 
 Route::get('/cart', CartComponent:: class);
 
-Route::get('/checkout', CheckoutComponent:: class);
+Route::get('/checkout', CheckoutComponent:: class)->name('product.cart');
 
 Route::get('/forms', App\Http\Livewire\Forms:: class)->name('forms');
 // Route::middleware([
