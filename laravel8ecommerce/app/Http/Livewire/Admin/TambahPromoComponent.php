@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Promo;
+use App\Models\TipePelanggan;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
@@ -35,6 +36,7 @@ class TambahPromoComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.tambah-promo-component')->layout('layouts.base');
+		$tipe_pelanggan = TipePelanggan::paginate(10);
+        return view('livewire.admin.tambah-promo-component',['tipe_pelanggan'=>$tipe_pelanggan])->layout('layouts.base');
     }
 }
