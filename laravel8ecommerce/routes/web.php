@@ -7,6 +7,8 @@ use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\User\UserProfileComponent;
+use App\Http\Livewire\User\UserChangePasswordComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\TambahPromoComponent;
 use App\Http\Livewire\Admin\AdminTambahKurirComponent;
@@ -56,6 +58,8 @@ Route::get('/forms', App\Http\Livewire\Forms:: class)->name('forms');
 //buat user
 Route::middleware(['auth:sanctum','verified'])->group(function(){
     route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
+    route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
+    route::get('/user/change-password',UserChangePasswordComponent::class)->name('user.changepassword');
     Route::get('/shop', ShopComponent:: class);
 });
 

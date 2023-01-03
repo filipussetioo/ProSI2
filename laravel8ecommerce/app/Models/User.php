@@ -58,4 +58,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function profile(){
+        return $this->hasOne(Pelanggan::class,'users_id');
+    }
+
+    public function alamat(){
+        return $this->hasOne(Alamat::class,'users_id');
+    }
 }

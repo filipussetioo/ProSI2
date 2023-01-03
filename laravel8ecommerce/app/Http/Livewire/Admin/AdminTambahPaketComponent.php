@@ -38,7 +38,7 @@ class AdminTambahPaketComponent extends Component
     public function render()
     {
         // $paket = Paket::paginate(5);
-        return view('livewire.admin.admin-tambah-paket-component')->layout('layouts.base');;
+        return view('livewire.admin.admin-tambah-paket-component')->layout('layouts.base');
     }
     public function addPaket()
     {
