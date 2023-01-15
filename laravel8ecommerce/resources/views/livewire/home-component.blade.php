@@ -22,13 +22,16 @@
                             <div class="portfolio-item">
                                 <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                                     <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                        <div class="portfolio-hover-content"></div>
                                     </div>
-                                    <img class="img-fluid" src="{{asset('../assets/images/pakets')}}/{{$paket->gambar_paket}}" alt="{{$paket->nama_paket}}" />
+                                        <img class="img-fluid" src="{{asset('../assets/images/pakets')}}/{{$paket->gambar_paket}}" alt="{{$paket->nama_paket}}" />
                                 </a>
                                 <div class="portfolio-caption">
                                     <div class="portfolio-caption-heading">{{$paket->nama_paket}}</div>
                                     <div class="portfolio-caption-subheading">{!! $paket->deskripsi !!}</div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ route('product.details',['slug'=>$paket->slug]) }}">Click to see more</a></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

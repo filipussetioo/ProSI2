@@ -16,10 +16,14 @@ class CreatePaketsTable extends Migration
         Schema::create('pakets', function (Blueprint $table) {
             $table->id();
             $table->string('nama_paket');
-            $table->bigInteger('harga');
+            $table->string('slug')->unique();
+            $table->decimal('harga');
             $table->text('gambar_paket')->nullable();
             $table->text('deskripsi');
+            $table->text('long_desc');
             $table->timestamps();
+            $table->date('date_start');
+            $table->date('date_end');
         });
     }
 

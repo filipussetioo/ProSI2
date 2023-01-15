@@ -14,6 +14,7 @@ use App\Http\Livewire\Admin\PromoComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\Admin\AdminEditPromoComponent;
 use App\Http\Livewire\Admin\AdminEditKurirComponent;
+use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\Owner\OwnerCategoryComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Form;
@@ -43,6 +44,8 @@ Route::get('/cart', CartComponent:: class);
 Route::get('/checkout', CheckoutComponent:: class)->name('product.cart');
 
 Route::get('/forms', App\Http\Livewire\Forms:: class)->name('forms');
+
+Route::get('/product/{slug}',DetailsComponent::class)->name('product.details');
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),

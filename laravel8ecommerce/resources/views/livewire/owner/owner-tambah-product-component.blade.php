@@ -32,10 +32,26 @@
                         		<label class="col-md-4 control-label">Deskripsi Paket</label>
 								<textarea wire:model.defer="deskripsi" name="deskripsi" id="mytextarea" ></textarea>
                         	</div>
+							<div class="form-group" wire:ignore>
+                        		<label class="col-md-4 control-label">Deskripsi Lainnya</label>
+								<textarea wire:model.defer="long_desc" name="long_desc" id="mytextarea2" ></textarea>
+                        	</div>
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Harga Paket</label>
                         		<div>
                         			<input type="number" placeholder="10000" class="form-control input-md" wire:model="harga"/>
+                        		</div>
+                        	</div>
+							<div class="form-group">
+                        		<label class="col-md-4 control-label">Tanggal Mulai</label>
+                        		<div>
+                        			<input type="date" class="form-control input-md" wire:model="date_start"/>
+                        		</div>
+                        	</div>
+							<div class="form-group">
+                        		<label class="col-md-4 control-label">Tanggal Selesai</label>
+                        		<div>
+                        			<input type="date" class="form-control input-md" wire:model="date_end"/>
                         		</div>
                         	</div>
                         	<div class="form-group">
@@ -68,6 +84,18 @@
 		.then(editor => {
 			editor.model.document.on('change:data', () => {
 				@this.set('deskripsi', editor.getData());
+			})
+		})
+		.catch(error => {
+			console.error(error);
+		});
+</script>
+<script>
+	ClassicEditor
+		.create(document.querySelector('#mytextarea2'))
+		.then(editor => {
+			editor.model.document.on('change:data', () => {
+				@this.set('long_desc', editor.getData());
 			})
 		})
 		.catch(error => {

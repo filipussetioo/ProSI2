@@ -6,15 +6,10 @@ namespace App\Http\Livewire;
 use App\Models\Paket;
 use Livewire\WithPagination;
 use Livewire\Component;
+use Cart;
 
 class ShopComponent extends Component
 {   
-    public function store($product_id,$product_name,$product_price)
-    {
-        Cart::add($product_id,$product_name,$product_price)->associate('App\Models\Paket');
-        session()->flash('success_message','Item added to Cart');
-        return redirect()->route('product.cart');
-    }
 	use WithPagination;
     public function render()
     {

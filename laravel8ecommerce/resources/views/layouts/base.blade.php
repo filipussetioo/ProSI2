@@ -53,42 +53,26 @@
                         @if(Route::has('login'))
                             @auth
                                 @if(Auth::user()->utype === 'ADM')
-                                    //Admin
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.promo')}}">Tambah Promo</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('admin.kurir')}}">Tambah kurir</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @elseif(Auth::user()->utype === 'OWN')
                                     <li class="nav-item"><a class="nav-link" href="{{route('owner.dashboard')}}">Lihat Pengguna</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('owner.promo')}}">Tambah Promo</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{route('owner.categories')}}">Tambah Kurir</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{route('owner.product')}}">Tambah Menu</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @else
-                                    //
                                     <li class="nav-item"><a class="nav-link" href="{{route('user.dashboard')}}">Home</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#portfolio">About Us</a></li>
                                     <li class="nav-item"><a class="nav-link" href="/shop">Shop</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i></li>
-                                    <!-- <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li> -->
+                                    <li class="nav-item"><a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit()" ><i class="fas fa-sign-out-alt"></i></li>
                                 @endif
                             @else
                                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#portfolio">About Us</a></li>
                                 <li class="nav-item"><a title="Register or Login" class="nav-link" href="{{route('login')}}">Login</a></li>
                                 <li class="nav-item"><a title="Register or Login" class="nav-link" href="{{route('register')}}">Register</a></li>
-                                <!-- <li class="nav-item"><a title="form" class="nav-link" href="{{route('forms')}}">Form</a></li> -->
-                                <!-- <div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Action
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-  </div>
-</div> -->
                             @endif
                         @endif
                     </ul>

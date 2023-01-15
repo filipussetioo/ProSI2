@@ -14,6 +14,9 @@ class OwnerEditProductComponent extends Component
     public $paket_id;
     public $nama_paket;
     public $deskripsi;
+    public $long_desc;
+    public $date_start;
+    public $date_end;
     public $harga;
     public $gambar_paket;
     public $newimage;
@@ -30,6 +33,9 @@ class OwnerEditProductComponent extends Component
 		$this->harga = $paket->harga;
         $this->gambar_paket = $paket->gambar_paket;
 		$this->deskripsi = $paket->deskripsi;
+        $this->long_desc = $paket->long_desc;
+        $this->date_start = $paket->date_start;
+        $this->date_end = $paket->date_end;
 	}
 
 	public function updateProduct(){
@@ -43,6 +49,9 @@ class OwnerEditProductComponent extends Component
             $paket->gambar_paket = $imageName;
          }
          $paket->deskripsi = $this->deskripsi;
+         $paket->long_desc = $this->long_desc;
+         $paket->date_start = $this->date_start;
+         $paket->date_end = $this->date_end;
 		 $paket->save();
 		 session()->flash('message','Paket telah diperbarui!');
 	}
