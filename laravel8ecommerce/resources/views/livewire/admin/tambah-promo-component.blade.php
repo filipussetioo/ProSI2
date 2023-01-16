@@ -63,10 +63,10 @@
                         	<div class="form-group">
                         		<label class="col-md-4 control-label">Tipe Pelanggan</label>
                         		<div class="col-md-4">
-                        		<input type="radio" id="1" name="tipe_pelanggan" value="1" wire:model="tp_id">
-  								<label for="bronze">Bronze</label><br>
-								<input type="radio" id="2" name="tipe_pelanggan" value="2" wire:model="tp_id">
-								<label for="gold"> Gold</label><br>
+									@foreach($tipe_pelanggan as $tipe_pelanggans)
+									<input type="radio" id={{$tipe_pelanggans->id}} name="tipe_pelanggan" value="1" wire:model="tp_id">
+	  								<label for="bronze">{{$tipe_pelanggans->tipe_pelanggan}}</label><br>
+									@endforeach
                         		</div>
                         	</div>
                         	<div class="form-group">

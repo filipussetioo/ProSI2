@@ -18,7 +18,7 @@ class CreatePaketsTable extends Migration
             $table->string('nama_paket');
             $table->bigInteger('harga');
             $table->text('gambar_paket')->nullable();
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
